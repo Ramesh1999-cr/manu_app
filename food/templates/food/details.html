@@ -1,0 +1,31 @@
+{% extends 'food/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="row">
+    <div class="col-md-6">
+        <img class="card" height="208px"  src="{{item.item_image}}">
+
+    </div>
+    <div class="col=md-4">
+        <h1>{{ item.item_name }}</h1>
+       <h4>{{ item.item_dsc }}</h4>
+       <h1> $: {{ item.item_price }}</h1>
+        <a href="{% url 'food:delete_item' item.id %}"><h6>Delete_Item</h6></a>
+    </div>
+
+</div>
+
+{% endblock%}
+</body>
+</html>

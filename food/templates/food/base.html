@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>base level</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Food_App</a>
+
+    <div class="navbar">
+        <a class="nav-item nav-link" href="{% url 'food:create_item' %}">Add_item</a>
+        <a class="nav-item nav-link" href="#">Delete_item</a>
+        <a class="nav-item nav-link" href="#">view_item</a>
+
+    </div>
+</nav>
+{% block body%}
+{% endblock %}
+</body>
+</html>

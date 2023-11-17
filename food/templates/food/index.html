@@ -1,0 +1,42 @@
+{% extends 'food/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+
+{% block body %}
+{% for i in item_list %}
+     <div class="row">
+         <div class="col-md-3 offset-md-2">
+             <img class="card" height="150px" src="{{ i.item_image }}">
+         </div>
+         <div class="col-md-3" >
+             <h3>{{ i.item_name }}</h3>
+             <h5>{{ i.item_dsc }}</h5>
+             <h4>$:{{ i.item_price }}</h4>
+         </div>
+         <div class="col-md-2" >
+             <h3><a href="{% url 'food:details' i.id %}" class="btn btn-success">Details</a></h3>
+         </div>
+         {% for message in messages %}
+             {{ massage.messages }}
+
+         {% endfor %}
+
+     </div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+</body>
+</html>
